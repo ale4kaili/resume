@@ -1,0 +1,18 @@
+{{#with group}}
+    Name: {{name}}
+    <br>
+    Description: {{description}}
+    <br>
+    ID: {{id}}
+    {{#if members}}
+        <br>            
+        <em><b>Members:</b></em>
+        {{#each members}}
+            <ul>
+                <li>
+                    {{> user user=this}}
+                </li>
+            </ul>
+        {{/each}}
+    {{/if}}
+{{/with}}

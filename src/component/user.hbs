@@ -1,0 +1,48 @@
+{{#if isFirst}}
+    <h3>{{name}}</h3>
+{{else}}
+    Name: {{name}}
+    <br>   
+{{/if}}
+{{#with user}}
+    Gender: {{gender}}
+    <br>
+    Age: {{age}}
+    <br>
+    ID: {{id}}
+    {{#if friends}}
+        <br>            
+        <em><b>Friends:</b></em>
+        {{#each friends}}
+            <ul>
+                <li>
+                    {{> user user=this}}
+                </li>
+            </ul>
+        {{/each}}
+    {{/if}}
+    {{#if mutual_friends}}
+        <br>
+        <br>            
+        <em><b>Mutual friends:</b></em>
+        {{#each mutual_friends}}
+            <ul>
+                <li>
+                    {{> user user=this}}
+                </li>
+            </ul>
+        {{/each}}
+    {{/if}}
+    {{#if groups}}
+        <br>
+        <br>
+        <em><b>Groups:</b></em>
+        {{#each groups}}
+            <ul>
+                <li>
+                    {{> group group=this}}
+                </li>
+            </ul>
+        {{/each}}       
+    {{/if}}
+{{/with}}
