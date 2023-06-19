@@ -1,0 +1,59 @@
+<div class="col-6">
+    <div class="card text-bg-light">
+        <img class="card-img-top" src="https://picsum.photos/400/200" 
+        alt="Product photo">
+        <div class="p-3">
+            <div>
+                {{#if isHot}}
+                    <span class="badge text-bg-warning rounded-pill text-uppercase mb-4">
+                        Hot
+                    </span>
+                {{/if}} 
+                {{#if isNew}}
+                    <span class="badge text-bg-primary rounded-pill mb-4">
+                        New
+                    </span>
+                {{/if}}
+            </div>
+            <div>
+                {{#if isFast}}
+                    <button class="btn text-bg-success btn-sm mb-2">
+                        Швидка доставка
+                    </button>
+                {{/if}}
+            </div>
+            <div>
+                {{#if isFree}}
+                    <button class="btn text-bg-secondary btn-sm mb-3">
+                        Безкоштовна доставка
+                    </button>
+                {{/if}}
+            </div>
+            <div class="mb-3">
+                <b>{{name}}</b>
+            </div>
+            {{#with review}}
+                {{amount}}
+                {{text}}
+            {{/with}}
+            <div class="mb-3 mt-3">
+                <h3>{{price}}</h3>
+            </div>
+             <div class="mb-2">
+                {{delivery}}
+            </div>
+            {{#each buttons}}
+                 <div class="mb-2">
+                    <a class="btn {{#if isPrimary}}btn-primary{{/if}}
+                    {{#if isSecondary}}btn-secondary{{/if}} me-2" href="{{link}}">
+                    {{text}}</a>
+                </div>
+            {{/each}}
+            <ul>
+                {{#each characteristics}}                
+                    <li>{{title}}:{{value}}</li>                                       
+                {{/each}}
+            </ul>
+        </div>
+    </div>       
+</div>
