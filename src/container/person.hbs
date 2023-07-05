@@ -3,21 +3,22 @@
         <main>
             <section>
                 <h1>{{name}}</h1>
-                <div><strong>Age: {{age}}</strong></div>
-                <br>     
-                <div><strong>Gender: {{gender}}</strong></div>
-                <br>
-                <div>
+                <div class="mt-3">
+                    <strong>Age: {{age}}</strong>
+                </div>                   
+                <div class="mt-1">
+                    <strong>Gender: {{gender}}</strong>
+                </div>               
+                <div class="mt-1 mb-1">
                     {{#with address}}
                         <address>{{zip}}, {{country}}, {{state}}, 
-                            <br> 
-                            {{city}}, {{street}}</address>
+                        {{city}}, {{street}}</address>
                     {{/with}}
                 </div>
             </section>
-            <hr>
+            <hr class="mt-1 mb-2">
             <section>
-                <div>
+                <div class="mb-2">
                     <h2>
                         Education
                     </h2>
@@ -27,16 +28,16 @@
                         {{#each education}}
                             <li>
                                 {{university}}, 
-                                <br>
-                                {{major}} ({{graduationYear}})
-                                <br>
+                                <div class="mt-2 mb-2">
+                                    {{major}} ({{graduationYear}})
+                                </div>
                                 Degree: {{degree}}
                             </li>
                         {{/each}}
                     </ul>
                 </div>
             </section>
-            <hr>
+            <hr class="mt-1 mb-2" >
             <section>
                 <div>
                     <h2>
@@ -47,15 +48,17 @@
                     <ul>
                         {{#each workExperience}}
                             <li>
-                                {{company}} (Year founded:{{year_founded}}),
-                                <br>
+                                <div class="mb-2 mt-2">
+                                    {{company}} (Year founded:{{year_founded}}),
+                                </div>
                                 {{industry}},
-                                <br>
-                                <br>
-                                <b>Title:</b> {{title}}, 
-                                <br>
+                                <div class="mb-2 mt-3">
+                                    <b>Title:</b> {{title}}, 
+                                </div>
                                 (from {{startDate}} to {{endDate}}),
-                                <h3>Responsibilities:</h3>                                
+                                <div class="mt-3">
+                                    <h3>Responsibilities:</h3>
+                                </div>                              
                                 <ul>
                                     {{#each responsibilities}}
                                         <li>
@@ -63,41 +66,50 @@
                                         </li>
                                     {{/each}}
                                 </ul>
-                                <h3>Employee:</h3>                                                              
+                                <div class="mt-3">
+                                    <h3>Employee:</h3>
+                                </div>                                                             
                                 <ul>
                                     {{#each employees}}
                                         <li>
-                                            <b>{{name}}</b>
-                                            <br>                                            
+                                            <div class="mt-3">
+                                                <b>{{name}}</b>
+                                            </div>                                          
                                             <b>Department:</b> {{department}},                                           
-                                            {{position}}                                                                                      
-                                            <h4>Project:</h4>
+                                            {{position}}
+                                            <div class="mt-3">                                                                                    
+                                                <h4>Project:</h4>
+                                            </div>
                                             <ul>
                                                 {{#each projects}}
                                                     <li>
                                                         {{name}} ({{status}}),
-                                                        <br>
-                                                        <b>Description:</b> {{description}}
+                                                        <div class="mt-3">
+                                                            <b>Description:</b> {{description}}
+                                                        </div>
                                                         <h5>Teams:</h5>                                  
                                                         <ul>                                                           
                                                             {{#each teams}}
                                                                 <li>
                                                                     {{team_name}}
-                                                                    <br>
+                                                                    
                                                                     {{#with team_leader}}
-                                                                        <br>
+                                                                        <div class="mt-3 mb-1">
                                                                         <b>{{title}}:</b> {{name}}
-                                                                        <br>
+                                                                        </div>
                                                                         ({{email}})
                                                                     {{/with}}
-                                                                    <h6>Team members:</h6>
+                                                                    <div class="mt-3">
+                                                                        <h6>Team members:</h6>
+                                                                    </div>
                                                                     <ul>
                                                                         {{#each team_members}}
                                                                             <li>
                                                                                 <b>{{title}}:</b> {{name}}
-                                                                                <br>
                                                                                 ({{email}})
-                                                                                <h6>Skills:</h6>
+                                                                                <div class="mt-3">
+                                                                                    <h6>Skills:</h6>
+                                                                                </div>
                                                                                 <ul>
                                                                                     {{#each skills}}
                                                                                         <li>
@@ -105,12 +117,16 @@
                                                                                         </li>
                                                                                     {{/each}}
                                                                                 </ul>
-                                                                                <h6>Projects:</h6>
+                                                                                <div class="mt-3">
+                                                                                    <h6>Projects:</h6>
+                                                                                </div>
                                                                                 <ul>
                                                                                     {{#each projects}}
                                                                                         <li>
                                                                                             {{name}}
-                                                                                            <br> <b>Description:</b> {{description}}
+                                                                                            <div class="mt-1 mb-3">
+                                                                                                <b>Description:</b> {{description}}
+                                                                                            </div>
                                                                                             <h6>Technologies:</h6>
                                                                                             <ul>
                                                                                                 {{#each technologies}}
@@ -119,7 +135,9 @@
                                                                                                 </li>
                                                                                                 {{/each}}
                                                                                             </ul>
-                                                                                            <h6>Team members:</h6>
+                                                                                            <div class="mt-3">
+                                                                                                <h6>Team members:</h6>
+                                                                                            </div>
                                                                                             <ul>
                                                                                                 {{#each team_members}}
                                                                                                     <li>

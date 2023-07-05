@@ -1,12 +1,17 @@
 {{#with group}}
-    Name: {{name}}
-    <br>
-    Description: {{description}}
-    <br>
-    ID: {{id}}
+    <div class="mt-3">
+        Name: {{name}}
+    </div>
+    <div class="mt-1">
+        Description: {{description}}
+    </div>
+    <div class="mt-1">
+        ID: {{id}}
+    </div>
     {{#if members}}
-        <br>            
-        <em><b>Members:</b></em>
+        <div class="mt-3">          
+            <em><b>Members:</b></em>
+        </div>
         {{#each members}}
             <ul>
                 <li>

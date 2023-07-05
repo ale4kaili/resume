@@ -6,94 +6,102 @@
 <div>
     <main>
         {{#with program.excursion}}
-            <section>           
-                <h1>{{name}}</h1>
+            <section>
+                <div class="mb-3">       
+                    <h1>{{name}}</h1>
+                </div>
                 {{#with location}}
                     <strong>
                         {{country}}, {{city}}
                     </strong>
                 {{/with}}
-                <br>
-                <br>
-                <b>{{date}}</b>                         
+                <div class="mt-3">
+                    <b>{{date}}</b>
+                </div>                        
             </section>
-            <hr>
+            <hr class="mt-3 mb-3">
             <section>
                 <ul>
                     {{#each program}}
-                        <li>    
-                            <h2>{{name}}</h2>
-                            <br>
-                            Type: {{type}}
-                            <br>
-                            Duration:{{duration}}
-                            <br>
+                        <li>
+                            <div class="mt-3 mb-2">
+                                <h2>{{name}}</h2>
+                            </div>
+                            <div class="mt-1">
+                                Type: {{type}}
+                            </div>
+                            <div class="mt-1 mb-1">
+                                Duration:{{duration}}
+                            </div>
                             {{#with details}}
                                 {{#with museum}}
-                                    <b>Museum:</b> {{name}}
-                                    <br>
+                                    <b>Museum:</b> 
+                                    {{name}}                                
                                     {{#with location}}
-                                        <b>Location:</b> {{country}},
+                                        <div class="mt-1 mb-1">
+                                            <b>Location:</b>
+                                        </div>
+                                        {{country}},
                                         {{city}},
                                         {{address}}
-                                    {{/with}}   
-                                    <h3>"Exhibits"</h3>
+                                    {{/with}}
+                                    <div class="mt-3 mb-2">
+                                        <h3>"Exhibits"</h3>
+                                    </div>
                                     <ul>
-                                        {{#each exhibits}}
-                                            <br>
+                                        {{#each exhibits}}                                            
                                             <li>                                           
                                                 <em>{{name}}</em>
                                                 {{#if audio_guide}}
                                                     (Audio-guide)
                                                 {{else}}
                                                     (No audio-guide)
-                                                {{/if}}
-                                                <br>
+                                                {{/if}}                                                
                                                 {{#if artist}}
-                                                    Artist: {{artist}}
-                                                    <br>
+                                                    Artist: {{artist}}                                                    
                                                 {{/if}}
-                                                Description: <p>{{description}}</p>
-                                                <br>
+                                                <div class="mt-1 mb-1">
+                                                    Description: <p>{{description}}</p>
+                                                </div>                                              
                                             </li>
                                         {{/each}}                                        
                                     </ul>
                                 {{/with}}
                                 {{#with venue}}
-                                    <b>Venue:</b> {{name}}
-                                    <br>
+                                    <b>Venue:</b> {{name}}                                    
                                     {{#with location}}
-                                        <b>Location:</b> {{country}},
+                                        <div class="mt-1 mb-1">
+                                            <b>Location:</b>
+                                        </div>
+                                        {{country}},
                                         {{city}},
                                         {{address}}
                                     {{/with}}   
                                 {{/with}}
                                 {{#if performers}}
-                                    <h3>"Performers"</h3>
+                                    <div class="mt-3 mb-2">
+                                        <h3>"Performers"</h3>
+                                    </div>
                                     <ul>
                                         {{#each performers}}
                                             <li>
                                                 <em>{{name}}</em>
-                                                {{type}}
-                                                <br>
-                                                <br>
+                                                {{type}}                                               
                                             </li>
                                         {{/each}}
                                     </ul>
-                                {{/if}}
-                                <br>
-                                <br>
+                                {{/if}}                                
                                 {{#with guide}}
                                     <b>Guide:</b>                        
                                     {{name}}
-                                    <br>
-                                    Language: {{language}}
-                                    <br>
+                                    <div class="mt-1 mb-1">
+                                        Language: {{language}}
+                                    </div>
                                     Rating: {{rating}}
                                 {{/with}}                                                                   
                             {{/with}}                            
                         </li>
-                        <hr>
+                        <hr class="mt-3 mb-3">
                     {{/each}}
                 </ul>
             </section>

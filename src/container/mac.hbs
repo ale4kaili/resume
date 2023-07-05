@@ -7,17 +7,24 @@
     <main>
         <secrion>
             <h1>Apple MacBook Pro</h1>
-            Description: <em>{{description}}</em>
-            <br>
-            Price: <em>{{price}}</em>
-            <br>
+            <div class="mt-1">
+                Description: <em>{{description}}</em>
+            </div>
+            <div class="mt-1">
+                Price: <em>{{price}}</em>
+            </div> 
         </secrion>
         <section>
-            Category: <strong>{{category}}</strong>
-            <br>            
-            <p><b>Features:</b></p>
+            <div class="mt-3">
+                Category: <strong>{{category}}</strong>
+            </div>         
+            <div class="mt-2">
+                <p><b>Features:</b></p>
+            </div>
             {{#with features}}
-                <em>Pricessor:</em>               
+                <div class="mt-1">
+                    <em>Pricessor:</em>
+                </div>          
                 {{#with processor}}
                     <ul>
                         <li>Brand: {{brand}}</li>
@@ -61,7 +68,7 @@
                         <li>Memory: {{memory}}</li>
                     </ul>
                 {{/with}}
-                <em><b>Ports</b></em>
+                <em><b>Ports:</b></em>
                 <ol>
                     {{#each ports}}
                         <li>
@@ -82,9 +89,9 @@
                         </li>
                     {{/each}}
                 </ol>
-                <br>
-                <br>
-                <em>Battery:</em> 
+                <div class="mt-3">
+                    <em>Battery:</em>
+                </div>
                 {{#with battery}}
                     <ul>
                         <li>Type: {{type}}</li>                           
@@ -92,13 +99,13 @@
                         <li>Life: {{life}}</li>
                     </ul>
                 {{/with}}
-                <br>
-                <br>
-                <em>Weight:</em>
+                <div class="mt-3">
+                    <em>Weight:</em>
+                </div>
                 {{weight}}
-                <br>
-                <br>
-                <em>Dimensions:</em>
+                <div class="mt-3">
+                    <em>Dimensions:</em>
+                </div>
                 {{#with dimensions}}
                     <ul>
                         <li>Height: {{height}}</li>
@@ -106,19 +113,22 @@
                         <li>Depth: {{depth}}</li>
                     </ul>
                 {{/with}}
-                <br>
-                <br>
-                <em>Operating system:</em>
+                <div class="mt-3 mb-3">
+                    <em>Operating system:</em>
                 {{operating_system}}
-                <br>
-                <br>
-                <em>Accessories:</em>
+                </div>
+                <div class="mt-3">
+                    <em>Accessories:</em>
+                </div>
                 <ul>
                     {{#each accessories}}
                         <li>
-                            {{name}}
-                            <br>
-                            Price:{{price}}
+                            <div class="mt-3">
+                                {{name}}
+                            </div>
+                            <div class="mt-1">
+                                Price:{{price}}
+                            </div>
                         </li>
                     {{/each}}
                 </ul>
