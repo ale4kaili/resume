@@ -41,7 +41,108 @@ router.get('/', function (req, res) {
   // res.render генерує нам HTML сторінку
 
   //            ↙ cюди вводимо назву файлу з сontainer
-  res.render('index', {})
+  res.render('index', {
+
+    layout: 'index',
+
+    header,
+
+    project_name: 'Resume project',
+    page: {
+      title: "Список сторінок",
+      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut lobortis lacus ac augue condimentum rhoncus. Duis malesuada risus hendrerit eros tincidunt, vel facilisis nisl hendrerit. Aliquam et malesuada ipsum, nec luctus nibh. Morbi et neque quis arcu mattis viverra. Pellentesque pulvinar tristique sollicitudin.',
+    },
+    buttons: [
+      {
+        name: 'Bio',
+        url: '/bio',
+      },
+      {
+        name: 'Bootstrap',
+        url: '/bootstrap',
+      },
+      {
+        name: 'Car',
+        url: '/car',
+      },
+      {
+        name: 'Education',
+        url: '/education',
+      },
+      {
+        name: 'Facebook',
+        url: '/facebook',
+      },
+      {
+        name: 'Js',
+        url: '/js',
+      },
+      {
+        name: 'Mac',
+        url: '/mac',
+      },
+      {
+        name: 'Person',
+        url: '/person',
+      },
+      {
+        name: 'Program',
+        url: '/program',
+      },
+      {
+        name: 'Shopcart',
+        url: '/shopcart',
+      },
+      {
+        name: 'Shopcatalog',
+        url: '/shopcatalog',
+      },
+      {
+        name: 'Shophome',
+        url: '/shophome',
+      },
+      {
+        name: 'Shoporder',
+        url: '/shoporder',
+      },
+      {
+        name: 'Shopprofile',
+        url: '/shopprofile',
+      },
+      {
+        name: 'Shopreview',
+        url: '/shopreview',
+      },
+      {
+        name: 'Skills',
+        url: '/skills',
+      },
+      {
+        name: 'Summary',
+        url: '/summary',
+      },
+      {
+        name: 'Task21',
+        url: '/task21',
+      },
+      {
+        name: 'Task22',
+        url: '/task22',
+      },
+      {
+        name: 'Task31',
+        url: '/task31',
+      },
+      {
+        name: 'Web',
+        url: '/web',
+      },
+      {
+        name: 'Work',
+        url: '/work',
+      },
+    ]
+  })
   //                  ↑↑ сюди вводимо JSON дані
 })
 

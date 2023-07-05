@@ -8,16 +8,19 @@
         <section>
             <h1>{{name}}</h1>
             {{description}}
-            <br>
-            <b>History:</b>
-            <br>
-
+            <div class="mt-3">
+                <b>History:</b>
+            </div>
             {{#with history}}
-                Founder: {{founder}} ({{year}})
+                <div class="mt-1">
+                    Founder: {{founder}} ({{year}})
+                </div>
             {{/with}}
         </section>
         <section>
-            <b>Types:</b>
+            <div class="mt-3">
+                <b>Types:</b>
+            </div>
             <ul>
                 {{#each types}}
                     <li>
@@ -25,9 +28,9 @@
                     </li>
                 {{/each}}
             </ul>
-            <b>Syntax:</b>
-            <br>
-            <br>
+            <div class="mb-2">
+                <b>Syntax:</b>
+            </div>            
             {{#with syntax}}
                 Variables:
                 <ul>
@@ -70,7 +73,9 @@
                     {{/each}}
                 </ul>
             {{/with}}
-            <b>Features:</b>
+            <div class="mt-3">
+                <b>Features:</b>
+            </div>
             <ul>
                 {{#each features}}
                     <li>
@@ -99,8 +104,7 @@
                 {{#each community}}
                     <li>
                         {{name}}
-                        <span class="badge rounded-pill text-bg-primary">{{type}}</span>
-            
+                        <span class="badge rounded-pill text-bg-primary">{{type}}</span>           
                     </li>
                 {{/each}}
             </ul>

@@ -6,194 +6,261 @@
 <div>
     <main>
         <h1>Car</h1>
-        Make: <em>{{make}}</em>
-        <br>
-        Model: <em>{{model}}</em>
-        <br>
-        Year: <em>{{year}}</em>
-        <br>
-        Color: <em>{{color}}</em>
-        <br>
-        <br>
-        <p><b>Features:</b></p>
+        <div class="mb-1">
+            Make: <em>{{make}}</em>
+        </div>
+        <div class="mb-1">
+            Model: <em>{{model}}</em>
+        </div>
+        <div class="mb-1">
+            Year: <em>{{year}}</em>
+        </div>
+        <div class="mb-1">
+            Color: <em>{{color}}</em>
+        </div>
+        <div class="mt-3">
+            <p><b>Features:</b></p>
+        </div>
         {{#with features}}
             {{#with interior}}
-                <em><b>Interior</b></em>
-                    <br>
-                {{#with seats}}
-                    <em>Seats:</em>
-                    <br>
-                    Material: {{material}}
-                    <br>
-                    Color: {{color}}
-                    <br>
-                    {{> car_component text="Heated" enabled=heated}}
-                    <br>
-                    {{> car_component text="Ventilated" enabled=ventilated}}                   
-                {{/with}}
-                <br>
-                <br>
-                {{#with dashboard}}
-                    <em>Dashboard:</em>
-                    <br>
-                    Material: {{material}}
-                    <br>
-                    Color: {{color}}
-                    <br>
-                    <br>
-                    {{#with display}}
-                        <em>Display:</em>
-                        <br>
-                        Type: {{type}}
-                        <br>
-                        Size: {{size}}
-                        <br>
-                        Resolution: {{resolution}}
-                        <br>
-                        {{> car_component text="Touchscreen" enabled=touchscreen}} 
+                <div class="mt-1">
+                    <em><b>Interior</b></em>
+                </div>
+                <div class="mb-3">                
+                    {{#with seats}}
+                        <div class="mt-3">
+                            <em>Seats:</em>
+                        </div>
+                        <div class="mb-1 mt-2">
+                            Material: {{material}}
+                        </div>
+                        <div class="mb-1">
+                            Color: {{color}}
+                        </div>
+                        <div class="mb-1">
+                            {{> car_component text="Heated" enabled=heated}}
+                        </div>
+                        <div class="mb-1">
+                            {{> car_component text="Ventilated" enabled=ventilated}}
+                        </div>                 
+                    {{/with}}
+                </div>
+                <div class="mb-3 mt-2"> 
+                    {{#with dashboard}}
+                        <div class="mt-1">
+                            <em>Dashboard:</em>
+                        </div>
+                        <div class="mb-1">
+                            Material: {{material}}
+                        </div>
+                        <div class="mb-1">
+                            Color: {{color}}
+                        </div>
+                        <div class="mb-3 mt-2"> 
+                            {{#with display}}
+                                <div class="mt-3">
+                                    <em>Display:</em>
+                                </div>
+                                <div class="mb-1">
+                                    Type: {{type}}
+                                </div>
+                                <div class="mb-1">
+                                    Size: {{size}}
+                                </div>
+                                <div class="mb-1">
+                                    Resolution: {{resolution}}
+                                </div>
+                                <div class="mb-1">
+                                    {{> car_component text="Touchscreen" enabled=touchscreen}}
+                                </div>
+                            {{/with}}
+                        </div>
+                    {{/with}}
+                </div>
+                <div class="mb-3 mt-2">
+                    {{#with audio}}
+                        <div class="mt-3">
+                            <em>Audio:</em>
+                        </div>
+                        <div class="mb-1">
+                            System: {{system}}
+                        </div>
+                        <div class="mb-1">
+                            Speakers: {{speakers}}
+                        </div>
+                        <div class="mb-1">
+                            {{> car_component text="Subwoofer" enabled=subwoofer}}
+                        </div>
+                        <div class="mb-1">
+                            {{> car_component text="Bluetooth" enabled=bluetooth}}
+                        </div>
+                        <div class="mb-1">
+                            {{> car_component text="USB" enabled=USB}}
+                        </div>
+                    {{/with}}
+                </div>
+            {{/with}}
+            <div class="mb-3 mt-2">
+                {{#with exterior}}
+                    <div class="mt-3">
+                        <em><b>Exterior:</b></em>
+                    </div>
+                    {{#with wheels}}
+                        <div class="mt-3">
+                            <em>Wheels:</em>
+                        </div>
+                        <div class="mt-1">
+                            Type: {{type}}
+                        </div>
+                        <div class="mt-1">
+                            Size: {{size}}
+                        </div>
+                        <div class="mt-1">
+                            Color: {{color}}
+                        </div>
+                    {{/with}}
+                    {{#with headlights}}
+                        <div class="mt-3">
+                            <em>Headlights:</em>
+                        </div>
+                        <div class="mt-1">
+                            Type: {{type}}
+                        </div>
+                        <div class="mt-1">
+                            Brightness: {{brightness}}
+                        </div>
+                        <div class="mt-1">
+                            Automatic: {{automatic}}
+                        </div>
+                    {{/with}}
+                    {{#with sunroof}}
+                        <div class="mt-3">
+                            <em>Sunroof:</em>
+                        </div>
+                        <div class="mb-1">
+                            Type: {{type}}
+                        </div>
+                        <div class="mb-1">
+                            Size: {{size}}
+                        </div> 
+                        <div class="mb-1">
+                            {{> car_component text="Automatic" enabled=automatic}}
+                        </div>
                     {{/with}}
                 {{/with}}
-                <br>
-                <br>
-                {{#with audio}}
-                    <em>Audio:</em>
-                    <br>
-                    System: {{system}}
-                    <br>       
-                    Speakers: {{speakers}}
-                    <br>
-                    {{> car_component text="Subwoofer" enabled=subwoofer}}
-                    <br>
-                    {{> car_component text="Bluetooth" enabled=bluetooth}}
-                    <br>
-                    {{> car_component text="USB" enabled=USB}} 
-                {{/with}}
-            {{/with}}
-            <br>
-            <br>
-            {{#with exterior}}
-                <em><b>Exterior</b></em>
-                {{#with wheels}}
-                    <br>
-                    <em>Wheels:</em>
-                    <br>
-                    Type: {{type}}
-                    <br>
-                    Size: {{size}}
-                    <br>
-                    Color: {{color}}
-                {{/with}}
-                <br>
-                <br>
-                {{#with headlights}}
-                    <em>Headlights:</em>
-                    <br>
-                    Type: {{type}}
-                    <br>
-                    Brightness: {{brightness}}
-                    <br>
-                    Automatic: {{automatic}}
-                {{/with}}
-                <br>
-                <br>
-                {{#with sunroof}}
-                    <em>Sunroof:</em>
-                    <br>
-                    Type: {{type}}
-                    <br>
-                    Size: {{size}} 
-                    <br>
-                    {{> car_component text="Automatic" enabled=automatic}} 
-                {{/with}}
-            {{/with}}     
-            <br>
-            <br>               
-            <em><b>Safety</b></em>
+            </div>    
+            <div class="mt-3">               
+                <em><b>Safety</b></em>
+            </div>
             {{#with safety}}
-                <br>
-                <em>Airbags:</em>
+                <div class="mt-3">
+                    <em>Airbags:</em>
+                </div>
                 {{#with airbags}}
-                    <br>
-                    Front: {{front}}
-                    <br>
-                    Side: {{side}}
-                    <br>
-                    Knee: {{knee}}
-                    <br>
-                    Rear: {{rear}}
+                    <div class="mt-1">
+                        Front: {{front}}
+                    </div>
+                    <div class="mt-1">
+                        Side: {{side}}
+                    </div>
+                    <div class="mt-1">
+                        Knee: {{knee}}
+                    </div>
+                    <div class="mt-1">
+                        Rear: {{rear}}
+                    </div>
                 {{/with}}
-                <br>
-                <br>
                 {{#with assistance}}
-                    <em>Assistance:</em>
-                    <br>
-                    {{> car_component text="Blind spot monitoring" enabled=blind_spot_monitoring}}
-                    <br>
-                    {{> car_component text="Rear cross traffic alert" enabled=rear_cross_traffic_alert}}
-                    <br>
-                    {{> car_component text="Lane departure warning" enabled=lane_departure_warning}}
-                    <br>
-                    {{> car_component text="Adaptive cruise control" enabled=adaptive_cruise_control}}
-                    <br>
-                    {{> car_component text="Collision warning" enabled=collision_warning}} 
+                    <div class="mt-3">
+                        <em>Assistance:</em>
+                    </div>
+                    <div class="mt-1">
+                        {{> car_component text="Blind spot monitoring" enabled=blind_spot_monitoring}}
+                    </div>
+                    <div class="mt-1">
+                        {{> car_component text="Rear cross traffic alert" enabled=rear_cross_traffic_alert}}
+                    </div>
+                    <div class="mt-1">
+                        {{> car_component text="Lane departure warning" enabled=lane_departure_warning}}
+                    </div>
+                    <div class="mt-1">
+                        {{> car_component text="Adaptive cruise control" enabled=adaptive_cruise_control}}
+                    </div>
+                    <div class="mt-1">
+                        {{> car_component text="Collision warning" enabled=collision_warning}}
+                    </div>
                 {{/with}}       
             {{/with}}
         {{/with}}
-            <br>
-            <br>
         {{#with engine}}
-            <em><b>Engine</b></em>
-            <br>
-            Type: {{type}}
-            <br> 
-            Displacement: {{displacement}}
-            <br> 
-            Horsepower: {{horsepower}}
-            <br> 
-            Torque: {{torque}} 
-            {{#with transmission}}
-                <br>
-                <br>
-                <em>Transmission:</em>
-                <br>
+            <div class="mt-3">
+                <em><b>Engine</b></em>
+            </div>
+            <div class="mt-1">
                 Type: {{type}}
-                <br>
-                Gears: {{gears}}
+            </div>
+            <div class="mt-1">
+                Displacement: {{displacement}}
+            </div>
+            <div class="mt-1">
+                Horsepower: {{horsepower}}
+            </div>
+            <div class="mt-1">
+                Torque: {{torque}}
+            </div>
+            {{#with transmission}}
+                <div class="mr-3">
+                    <em>Transmission:</em>
+                </div>
+                <div class="mt-1">
+                    Type: {{type}}
+                </div>
+                <div class="mt-1">
+                    Gears: {{gears}}
+                </div>
             {{/with}}
         {{/with}}
-        <br>
-        <br>
-        <em><b>Fuel economy</b></em>
+        <div class="mt-3">
+            <em><b>Fuel economy</b></em>
+        </div>
         {{#with fuel_economy}}
-            <br>
-            City: {{city}}
-            <br>
-            Highway: {{highway}}
-            <br>
-            Combined: {{combined}} 
+            <div class="mt-1">
+                City: {{city}}
+            </div>
+            <div class="mb-1">
+                Highway: {{highway}}
+            </div>
+            <div class="mb-1">
+                Combined: {{combined}}
+            </div>
         {{/with}}
-        <br>
-        <br>
-        <em><b>Price</b></em>
+        <div class="mt-3">
+            <em><b>Price</b></em>
+        </div>
         {{#with price}}
-            <br>
-            Base: {{base}}
-            <br> 
-            Destination: {{destination}}
-            <br>
-            <br>
+            <div class="mb-1">
+                Base: {{base}}
+            </div>
+            <div class="mb-1">
+                Destination: {{destination}}
+            </div>
             {{#with options}}
-                <em>Options:</em>
-                <br>
-                Navigation: {{navigation}} 
-                <br>
-                Moonroof: {{moonroof}}
-                <br>
-                Premium paint: {{premium_paint}}
+                <div class="mt-3">
+                    <em>Options:</em>
+                </div>
+                <div class="mt-1">
+                    Navigation: {{navigation}}
+                </div>
+                <div class="mt-1">
+                    Moonroof: {{moonroof}}
+                </div>
+                <div class="mt-1">
+                    Premium paint: {{premium_paint}}
+                </div>
             {{/with}}
-            <br>
-            <br>
-            <b>Total:</b> {{total}}
+            <div class="mt-3">
+                <b>Total:</b> {{total}}
+            </div>
         {{/with}}        
     </main>
 </div>

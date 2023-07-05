@@ -5,24 +5,22 @@
 
 <div>
     <main>
-        <section>
+        <section> 
             <h1>{{name}}</h1>
             <b>Birth.</b> {{birthdate}},
-            <br>
-            {{birthplace}}
-            <br>
-            <br>
-            <b>Death.</b> {{deathdate}},
-            <br>
-            {{deathplace}}
-            <br>
-            <br>
+            <div class="mb-3">
+                {{birthplace}}
+            </div>           
+            <b>Death.</b> {{deathdate}},           
+            <div class="mb-3">
+                {{deathplace}}
+            </div>            
             <b>Nationality:</b> {{nationality}}
-            <br>
-            <br>
-            <b>Occupation:</b> {{occupation}}
+            <div class="mt-3">
+                <b>Occupation:</b> {{occupation}}
+            </div>
         </section>
-        <hr>
+        <hr class="mb-3">
         <section>
             <h2>Known for:</h2> 
             <ul>
@@ -33,51 +31,50 @@
                 {{/each}}
             </ul>    
         </section>
-        <hr>
+        <hr class="mb-3">
         <section>
             <h3>Education:</h3>
             <ul>
                 {{#each education}}
                     <li>
-                        {{institution}}, ({{year}})
-                        <br>
+                        <div class="mb-2">
+                            {{institution}}, ({{year}})
+                        </div>                        
                         {{field}},
                         {{degree}}
                     </li>
                 {{/each}}
             </ul>
         </section>
-        <hr>
+        <hr class="mb-3">
         <section>
             <h4>Notable publications:</h4>
             <ul>
                 {{#each notable_publications}}
                     <li>
                         <em>{{title}}</em>
-                        <br>
-                        {{publisher}} ({{year}})
-                        <br>
-                        <br>
+                        <div class="mb-4">
+                             {{publisher}} ({{year}})
+                        </div>
                     </li>
                 {{/each}}    
             </ul>
         </section>
-        <hr>
+        <hr class="mb-3">
         <section>
             <h4>Partners:</h4>
             <ul>
                 {{#each partners}}
                     <li>
                         <em>{{name}}</em>
-                        <br>
-                        {{relationship}} ({{years}})
-                        <br>
-                        <br>
+                        <div class="mb-3">
+                            {{relationship}} ({{years}})
+                        </div>
                     </li>
                 {{/each}}    
             </ul>
         </section>
-        <hr>
+        <hr class="mb-3">
         <section>
             <h4>Awards:</h4>
             <ul>
@@ -85,15 +82,15 @@
                     <li>
                         <em>{{title}}</em>
                         ({{year}})
-                        <br>
-                        "{{description}}" 
-                        <br>
+                        <div class="mb-3">
+                            "{{description}}" 
+                        </div>
                     </li>
                 {{/each}}
             </ul>           
         </section>
-        <hr>
-         <section>
+        <hr class="mb-3">
+        <section>
             <h4>Influences:</h4>
             <ul>
                 {{#each influences}}
@@ -113,7 +110,7 @@
                 {{/each}}
             </ul>           
         </section>
-        <hr>
+        <hr class="mb-3">
          <section>
             <h4>Quotes:</h4>
             <ul>
@@ -124,30 +121,31 @@
                 {{/each}}
             </ul>           
         </section>
-        <hr>
+        <hr class="mb-3">
         <section>
             <h4>Major discoveries:</h4>
             <ul>
                 {{#each major_discoveries}}
                     <li>
                         <em>"{{title}}"</em> ({{year}})
-                        <br>
-                        <b>Description:</b> {{description}}
+                        <div class="mb-3 mt-2">
+                            <b>Description:</b> {{description}}
+                        </div>
                     </li>
                 {{/each}}
             </ul>           
         </section>
-        <hr>
+        <hr class="mb-3">
         <section>
-            <h4>Contributions:</h4>
-            
-                {{#with contributions}}                   
-                    <b>Field:</b> {{field}}
-                    <br>
-                    <em>"{{title}}"</em> ({{year}})
-                    <br>
-                    <br>
-                    <b>Description:</b> {{description}}                   
+            <h4>Contributions:</h4>           
+                {{#with contributions}}
+                    <div class="mt-2">                 
+                        <b>Field:</b> {{field}}
+                    </div>
+                    <em>"{{title}}"</em> ({{year}}) 
+                    <div class="mb-3 mt-2">
+                        <b>Description:</b> {{description}}
+                    </div>                
                 {{/with}}                       
         </section>
     </main>

@@ -3,7 +3,21 @@
 в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/"
  --}}
 
-<h1>Hello world</h1>
+<main class="ms-5">
+    {{#with page}}
+        <div class="p-3 mb-4">
+            <h4 class="mb-3">{{title}}</h4>
+            {{text}}
+        </div>
+    {{/with}}
+    <div class="p-3 mb-4">
+        {{#each buttons}}
+            <div>
+                <a href="{{url}}" class="btn btn-primary mt-1 mb-2">{{name}}</a>
+            </div>
+        {{/each}}
+    </div>
+</main>
 
 {{!-- 
     Цей код містить лише те, що буде виводитись в <body>
